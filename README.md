@@ -21,7 +21,7 @@ To convert the RNA sequence to a polypeptide:
 
     docker-compose run --rm app /app/convert_rna_to_protein.py @/app/data/inputs/rna_sequence.txt
 
-To plot the GC-content graph:
+To plot the GC-content graph (you should specify the source of the data, the name of the future png file and the step size (optional)):
 
     docker-compose run --rm app /app/plot_the_gc_ratio.py @/app/data/inputs/dna_sequence.txt 'example' -s 15
 
