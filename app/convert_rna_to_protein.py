@@ -7,7 +7,7 @@ from constants import CODON_LENGTH, ERROR_MESSAGE, RNA_BASES
 def convert_rna_to_protein(rna: str) -> str:
     """ Function that imitates the translation process """
 
-    if incorrect_input(rna):
+    if is_incorrect_input(rna):
         return ERROR_MESSAGE
 
     start, end = 0, CODON_LENGTH
@@ -23,7 +23,7 @@ def convert_rna_to_protein(rna: str) -> str:
     return polypeptide
 
 
-def incorrect_input(input_rna: str) -> bool:
+def is_incorrect_input(input_rna: str) -> bool:
     """ Checks if the input is a correct RNA sequence """
 
     str_input = str(input_rna)

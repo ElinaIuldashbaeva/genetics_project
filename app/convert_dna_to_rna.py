@@ -7,7 +7,7 @@ from constants import ERROR_MESSAGE, DNA_BASES
 def convert_dna_to_rna(dna: str) -> str:
     """ Function that imitates the transcription process """
 
-    if incorrect_input(dna):
+    if is_incorrect_input(dna):
         return ERROR_MESSAGE
 
     rna = ''
@@ -19,7 +19,7 @@ def convert_dna_to_rna(dna: str) -> str:
     return rna
 
 
-def incorrect_input(input_dna: str) -> bool:
+def is_incorrect_input(input_dna: str) -> bool:
     """ Checks if the input is a correct DNA sequence """
 
     str_input = str(input_dna)

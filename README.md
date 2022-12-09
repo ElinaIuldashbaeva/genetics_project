@@ -28,11 +28,17 @@ To plot the GC-content graph:
 You can specify inputs in a /data/inputs/ directory and find the results of the functions in /data/outputs/.
 
 
-To test the functions:
+### The project has unittests.
+
+To test the test_convert_dna_to_rna function:
 
     docker-compose run --rm app -m unittest /app/tests/test_convert_dna_to_rna.py
 
+To test the test_convert_rna_to_protein function:
+
     docker-compose run --rm app -m unittest /app/tests/test_convert_rna_to_protein.py
+
+To test the test_plot_the_gc_ratio function:
 
     docker-compose run --rm app -m unittest /app/tests/test_plot_the_gc_ratio.py
 
