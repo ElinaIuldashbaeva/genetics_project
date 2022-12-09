@@ -8,14 +8,15 @@ from constants import ERROR_MESSAGE, DNA_BASES
 
 def plot_the_gc_ratio(sequence: str, name: str, step: int = 100) -> str:
     """ Function that plots the GC-content graph """
-    if incorrect_input(sequence):
+    if is_incorrect_input(sequence):
         return ERROR_MESSAGE
 
     step = min(len(sequence), step)
     ratios = []
     start, end = 0, step
+    bases_number = {'A': 0, 'T': 0, 'G': 0, 'C': 0}
     while end <= len(sequence):
-        bases_number = {'A': 0, 'T': 0, 'G': 0, 'C': 0}
+        bases_number.update({'A': 0, 'T': 0, 'G': 0, 'C': 0})
         for base in sequence[start:end]:
             bases_number[base] += 1
         ratio = ((bases_number['G'] + bases_number['C']) / step) * 100
@@ -32,7 +33,7 @@ def plot_the_gc_ratio(sequence: str, name: str, step: int = 100) -> str:
     return 'The graph is stored'
 
 
-def incorrect_input(input_dna: str) -> bool:
+def is_incorrect_input(input_dna: str) -> bool:
     """ Checks if the input is a correct DNA sequence """
 
     str_input = str(input_dna)
